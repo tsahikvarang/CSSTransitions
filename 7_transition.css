@@ -1,0 +1,129 @@
+header{
+	position: sticky;
+	top: 0px;
+	text-align:center;
+}
+
+body{
+	position: absolute;
+	left: 15%;
+	width: 85%;
+	margin: 0%;
+}
+header p{
+	background-color: red;
+	font-size: 40px;
+	padding: 15px;
+	margin: 0px; 
+	font-family: sans-serif;
+}
+
+h1{
+	text-align: center;	
+	margin: 10px;
+}
+
+a{
+	color: purple;
+}
+
+#thanks{
+	position: fixed;
+	font-size: 30px;
+	bottom: 0px;
+	right: 0px;
+	margin: 0;
+	color: purple; 
+	background-color: lightBlue;
+	border-color: lightblue;
+	border-style: solid;
+	border-width: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#container{
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+#container article{
+	font-family: sans-serif;
+	width: 300px;
+	text-align: justify;
+	font-size: 15px;
+	margin-left: 50px;
+	color: grey;
+	transition-duration: 2s;
+}
+
+#container article:hover{
+	color: black;
+	font-size: 20px;
+	
+}
+/*only changes first p tag within article tag. so skips the <p><a href.... tag */
+article p:first-of-type:first-letter { 
+	font-family:"Times New Roman";
+	font-size: 36px;
+}
+
+#menuItems{ /*settng up the menu side bar*/
+	display:flex; 
+	flex-direction:column;	
+	position: fixed;
+	width: 15%;
+	top: 0px;
+	bottom: 0px;	
+	left: 0px;
+	text-align:center;
+	background-color: black;
+}
+
+
+#menuItems button{ /*recent articles, services, mission & about us buttons*/
+	background-color:blue;
+	color: white;
+	font-size: 15px;
+	padding: 10px;
+}
+
+#menuItems button:hover{ /*changes the buttons above to orange*/
+	background-color: orange;	
+}
+
+#jumpMenu{
+	display:none; /*hide the article links at first*/
+}
+
+/*reveal the article links when you hover recent articles*/
+#recentArticles:hover + #jumpMenu { /* + because jumpMenu is a SIBLING to recentArticles*/
+	display:block;
+}
+
+#jumpMenu:hover { /*keeps menu open when hovering the links*/
+	display: block;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	background-color: orange;
+}
+
+ul li:hover { /*change bg color whne hovering article link*/
+	background-color: blue;
+}
+
+ul li a:hover{
+	color: white;
+}
+
+article a::after{ /*puts the icon after the read more text*/
+	content: url(arrow.png);
+}
